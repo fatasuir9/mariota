@@ -5,6 +5,12 @@ if ('serviceWorker' in navigator) {
             .then(function() { console.log('Service Worker Registered'); });
 }
 
+// Copyright snippet
+$(document).ready(function() {
+	$('.copyright').append('©' + ' ' + new Date().getFullYear() + ' ' + 'Mariota. All rights reserved.');
+});
+
+
 // API: Joke Loading
 var lock = false;
 var jokes = [];

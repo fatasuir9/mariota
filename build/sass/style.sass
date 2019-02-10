@@ -29,6 +29,8 @@
 
 @import 'normalize'
 @import 'mixins'
+@import 'extends'
+@import 'splash'
 
 /*------------------------------------*\
  *    $GLOBAL
@@ -59,37 +61,15 @@ h6
   font-weight: 400
 
 
-
-/*------------------------------------*\
- *    $EXTENDS
- *\*------------------------------------
-
-
-.fixed
-  bottom: 0
-  left: 0
-  position: fixed
-  right: 0
-  top: 0
-
-.flex
-  display: flex
-  align-items: center
-  justify-content: center
-
-  > div
-    flex: 1 0 0
-
-
 /*------------------------------------*\
  *    $KEYFRAMES
  *\*------------------------------------
 
 @keyframes spin
   0%
-    @include vendor(transform, rotate(360deg))
-  100%
     @include vendor(transform, rotate(0deg))
+  100%
+    @include vendor(transform, rotate(360deg))
 
 
 @keyframes splash
@@ -99,52 +79,8 @@ h6
     @include vendor(opacity, 0)
   100%
     @include vendor(opacity, 0)
-    top: -200%
     height: 0
     width: 0
-
-
-/*------------------------------------*\
- *    $SPLASH
- *\*------------------------------------
-
-.splash
-  @include background-size(cover)
-  @extend .fixed
-  background-image: url(../images/splash.png)
-  background-position: 55% 100%
-  background-color: #543E43
-  color: #FFF
-  text-align: center
-  z-index: 1
-
-  &.hide
-    @include vendor(animation, splash 1s ease-in-out 1s forwards)
-
-
-  &:before
-    content: ''
-    background: -moz-linear-gradient(top, rgba(49,20,25,1) 0%, rgba(254,117,120,.2) 100%)
-    background: -webkit-linear-gradient(top, rgba(49,20,25,1) 0%,rgba(254,117,120,.2) 100%)
-    background: linear-gradient(to bottom, rgba(49,20,25,1) 0%,rgba(254,117,120,.2) 100%)
-    bottom: 0
-    height: 100%
-    left: 0
-    position: absolute
-    top: 0
-    width: 100%
-
-  .content
-    position: relative
-    top: 6%
-    z-index: 2
-
-  .logo
-    color: #FE7678
-    text-shadow: 0 1px 0 rgb(119, 57, 58)
-
-    span
-      color: #FFF
 
 
 /*------------------------------------*\
@@ -166,7 +102,12 @@ h6
 
   .header
     @extend .flex
-    background: #FF667E
+
+    background: #fe7678
+    background: -moz-linear-gradient(top, #fe7678 0%, #ff667e 100%)
+    background: -webkit-linear-gradient(top, #fe7678 0%,#ff667e 100%)
+    background: linear-gradient(to bottom, #fe7678 0%,#ff667e 100%)
+
     height: 30%
     color: #FFF
 
@@ -188,7 +129,7 @@ h6
     padding-left: 5%
     padding-bottom: 12%
     margin-top: -4em
-    min-height: 40%
+    min-height: 50%
 
     .humour__joke
       font-size: 1.6rem
