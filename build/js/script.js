@@ -1,10 +1,9 @@
 // Check for service worker
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-            .register('service-worker.js')
+            .register('../service-worker.js')
             .then(function() { console.log('Service Worker Registered'); });
 }
-
 
 // API: Joke Loading
 var lock = false;
@@ -15,7 +14,7 @@ function loadJoke(retry) {
     if (!lock || retry) {
         lock = true;
         $('.humour__reload').addClass('animate');
-        $.get('https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke')
+        $.get('https://official-joke-api.appspot.com/random_joke')
         .done(function(joke) {
             if (!jokes.includes(joke.id)) {
                 jokes.push(joke.id);
