@@ -5,6 +5,18 @@ if ('serviceWorker' in navigator) {
             .then(function() { console.log('Service Worker Registered'); });
 }
 
+// Check for screen size
+$(function() {
+	$(window).resize(function() {
+		if (window.innerWidth < 812){
+			$('.screen').addClass('hide');
+		} else {
+			$('.screen').removeClass('hide');
+		}
+	}).resize();
+});
+
+
 // Copyright snippet
 $(document).ready(function() {
 	$('.copyright').append('©' + ' ' + new Date().getFullYear() + ' ' + 'Mariota. All rights reserved.');
