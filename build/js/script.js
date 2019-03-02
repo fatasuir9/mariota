@@ -1,3 +1,9 @@
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+	navigator.serviceWorker
+		.register('../service-worker.js');
+}
+
 // Check for screen size
 $(function() {
 	$(window).resize(function() {
