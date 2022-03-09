@@ -26,5 +26,5 @@ Run `grunt watch`
 
 
 ## Author
-- Ghis - [fatasuir9.com](https://fatasuir9.com/)
+- Ghis - [korzeitt.com](https://korzeitt.com/)
 - See also list of [contributors](https://github.com/fatasuir9/mariota/graphs/contributors) who participated in this project.
